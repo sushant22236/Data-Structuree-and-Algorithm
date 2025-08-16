@@ -7,7 +7,7 @@ public class factorial {
         for(int i = 1; i <= n; i++ ){
             fact = fact * i;
         }
-        System.out.println(fact);
+        System.out.print(fact);
 
         sc.close();
 
