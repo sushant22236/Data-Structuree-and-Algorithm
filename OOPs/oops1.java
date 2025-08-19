@@ -39,6 +39,20 @@ public class oops1 {
 
         Student std2 = new Student(45);
         System.out.println(std2.roll_no);
+
+        // copy constructor
+
+        Teacher T1 = new Teacher();
+        T1.Salary = "66570";
+        System.out.println(T1.Salary);
+        T1.name = "Kaa ho ka haal ba";
+        T1.password = "iusgfugerug";
+        T1.marks[0] = 100;
+        T1.marks[1] = 97;
+        T1.marks[2] = 94;
+        
+        Teacher T2 = new Teacher(T1);
+        T2.password = "ncbjsdcvafdb";
     }
 
 }
@@ -147,4 +161,41 @@ class Person{
         this.age = newAge;
     }
 
+}
+
+
+
+// Constructor with copy constructor
+
+//isme constructor overloading bhi hai
+
+class Teacher{
+    String name;
+    String Salary;
+    String password;
+    int marks[];
+
+    //Copy constructor
+
+    Teacher(Teacher T1){
+        marks = new int [3];
+        this.name = T1.name;
+        this.Salary = T1.Salary;
+    }
+
+    Teacher(){
+        marks = new int[3];
+        System.out.println("constructor with copy constructor");
+    }
+
+    Teacher(String newName, String newSalary){
+        marks = new int[3];
+        this.name = newName;
+        this.Salary = newSalary;
+    }
+
+    Teacher(String newPassword){
+        marks = new int[3];
+        this.password = newPassword;
+    }
 }
