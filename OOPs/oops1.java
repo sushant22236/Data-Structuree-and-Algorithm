@@ -53,6 +53,11 @@ public class oops1 {
         
         Teacher T2 = new Teacher(T1);
         T2.password = "ncbjsdcvafdb";
+
+        T1.marks[2] = 99;
+
+        System.out.println(T1.marks[2]);
+         
     }
 
 }
@@ -181,6 +186,7 @@ class Teacher{
         marks = new int [3];
         this.name = T1.name;
         this.Salary = T1.Salary;
+        this.marks = T1.marks;
     }
 
     Teacher(){
