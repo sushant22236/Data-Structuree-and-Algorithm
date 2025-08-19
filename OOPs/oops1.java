@@ -11,6 +11,13 @@ public class oops1 {
         p1.setColor("yellow");
         System.out.println(p1.getColor());
 
+        Person per = new Person();
+        per.setName("different");
+        System.out.println(per.getname());
+        per.setAddress("Delhi");
+        System.out.println(per.getaddress());
+        per.setAge(21);
+        System.out.println(per.getage());
 
         // Encapsulation
 
@@ -21,11 +28,20 @@ public class oops1 {
         System.out.println(car1.getmodel());
         car1.setYear(1993);
         System.out.println(car1.getyear());
+
+        //constructor
+
+        Student std1 = new Student();
+
+        Student std = new Student("rounak", 78);
+        System.out.println(std.name);
+        System.out.println(std.roll_no);
+
+        Student std2 = new Student(45);
+        System.out.println(std2.roll_no);
     }
 
 }
-
-
 
 class Pen{
     private String color;
@@ -78,4 +94,57 @@ class Car {
     void setYear(int newYear){
         this.year = newYear;
     }
+
+}
+
+//constructor
+
+class Student{
+    String name;
+    int roll_no;
+
+    Student(){
+        System.out.println("constructor is called without parameter that is known as no-parametrazied Constructor");
+    }
+
+    Student(String name, int roll_no){
+        this.name = name;
+        this.roll_no = roll_no;
+    }
+
+    Student(int roll_no){
+        this.roll_no = roll_no;
+    }
+
+}
+
+class Person{
+    private String name;
+    private String address;
+    private int age;
+
+    String getname(){
+        return this.name;
+    }
+
+    String getaddress(){
+        return this.address;
+    }
+
+    int getage(){
+        return this.age;
+    }
+
+    public void setName(String newName){
+        this.name = newName;
+    }
+
+    public void setAddress(String newAddress){
+        this.address = newAddress;
+    }
+
+    public void setAge(int newAge){
+        this.age = newAge;
+    }
+
 }
