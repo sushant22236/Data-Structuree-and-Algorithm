@@ -23,6 +23,7 @@ public class binarySearch {
         int key = 19;
         int search = binarySearch1(number, key);
         System.out.println("key is found at "+ search);
+    
     }
     
 }
