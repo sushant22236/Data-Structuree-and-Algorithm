@@ -56,7 +56,9 @@ public class oops1 {
 
         T1.marks[2] = 99;
 
-        System.out.println(T1.marks[2]);
+        for(int i = 0; i < 3; i++){
+            System.out.println(T2.marks[i]);
+        }
          
     }
 
@@ -72,14 +74,26 @@ class Teacher{
     String password;
     int marks[];
 
-    //Copy constructor
+    //shallow Copy constructor
+
+    // Teacher(Teacher T1){
+    //     marks = new int [3];
+    //     this.name = T1.name;
+    //     this.Salary = T1.Salary;
+    //     this.marks = T1.marks;
+    // }
+
+    //Deep copy constructor
 
     Teacher(Teacher T1){
         marks = new int [3];
         this.name = T1.name;
         this.Salary = T1.Salary;
-        this.marks = T1.marks;
+        for(int i = 0; i < marks.length; i++){
+            this.marks[i] = T1.marks[i];
+        }
     }
+
 
     Teacher(){
         marks = new int[3];
