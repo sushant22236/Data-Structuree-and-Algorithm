@@ -62,6 +62,43 @@ public class oops1 {
 
 }
 
+// Constructor with copy constructor
+
+//isme constructor overloading bhi hai
+
+class Teacher{
+    String name;
+    String Salary;
+    String password;
+    int marks[];
+
+    //Copy constructor
+
+    Teacher(Teacher T1){
+        marks = new int [3];
+        this.name = T1.name;
+        this.Salary = T1.Salary;
+        this.marks = T1.marks;
+    }
+
+    Teacher(){
+        marks = new int[3];
+        System.out.println("constructor with copy constructor");
+    }
+
+    Teacher(String newName, String newSalary){
+        marks = new int[3];
+        this.name = newName;
+        this.Salary = newSalary;
+    }
+
+    Teacher(String newPassword){
+        marks = new int[3];
+        this.password = newPassword;
+    }
+}
+
+
 class Pen{
     private String color;
     private int tip;
@@ -166,42 +203,4 @@ class Person{
         this.age = newAge;
     }
 
-}
-
-
-
-// Constructor with copy constructor
-
-//isme constructor overloading bhi hai
-
-class Teacher{
-    String name;
-    String Salary;
-    String password;
-    int marks[];
-
-    //Copy constructor
-
-    Teacher(Teacher T1){
-        marks = new int [3];
-        this.name = T1.name;
-        this.Salary = T1.Salary;
-        this.marks = T1.marks;
-    }
-
-    Teacher(){
-        marks = new int[3];
-        System.out.println("constructor with copy constructor");
-    }
-
-    Teacher(String newName, String newSalary){
-        marks = new int[3];
-        this.name = newName;
-        this.Salary = newSalary;
-    }
-
-    Teacher(String newPassword){
-        marks = new int[3];
-        this.password = newPassword;
-    }
 }
