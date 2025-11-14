@@ -24,7 +24,7 @@ public class crud {
         System.out.println("\nEnter the index of the element you want to read: ");
         int index = sc.nextInt();
         if(index >= 0 && index < size){
-            System.out.println("Element at index " + index + " is: " + arr[3]);
+            System.out.println("Element at index " + index + " is: " + arr[index]);
         } else {
             System.out.println("Invalid index");
         }
