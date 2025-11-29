@@ -6,6 +6,8 @@ public class oops2 {
 
         Fish shark = new Fish();
         shark.eat();
+        shark.fins = 4;
+        System.out.println(shark.fins);
     }
     
 }
