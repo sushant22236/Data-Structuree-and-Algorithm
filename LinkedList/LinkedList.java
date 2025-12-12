@@ -50,6 +50,41 @@ public class LinkedList {
         System.out.println();
 
     }
+
+    public int searchNode(int key){
+        Node temp = head;
+        int i = 0;
+
+        while(temp != null){
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+
+        return -1;
+    }
+
+    public int helper(Node head, int key){
+        if(head == null){
+            return -1;
+        }
+
+        if(head.data == key){
+            return 0;
+        }
+        int idx = helper(head.next, key);
+        if(idx == -1){
+            return -1;
+        } else {
+            return idx + 1;
+        }
+    }
+
+    public int recursiveSearch(int key){
+        return helper(head, key);
+    }
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
@@ -64,5 +99,11 @@ public class LinkedList {
         ll.print();
         ll.addlast(4);
         ll.print();
+
+        System.out.println(ll.searchNode(3));
+        System.out.println(ll.searchNode(10));
+
+        System.out.println(ll.recursiveSearch(4));
+        System.out.println(ll.recursiveSearch(99));
     }
 }
