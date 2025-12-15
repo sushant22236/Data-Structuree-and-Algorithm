@@ -66,6 +66,20 @@ public class LinkedList {
         return -1;
     }
 
+    public void reverseLinkedList(){
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public int helper(Node head, int key){
         if(head == null){
             return -1;
@@ -141,6 +155,8 @@ public class LinkedList {
         ll.print();
         ll.addlast(5);
         ll.print();
+        ll.reverseLinkedList();
+        ll.print();
 
         //System.out.println(ll.searchNode(3));
         //System.out.println(ll.searchNode(10));
@@ -148,7 +164,7 @@ public class LinkedList {
         //System.out.println(ll.recursiveSearch(4));
         //System.out.println(ll.recursiveSearch(99));
 
-        ll.deleteNthFromEnd(3);
-        ll.print();
+        ///ll.deleteNthFromEnd(3);
+        //ll.print();
     }
 }
