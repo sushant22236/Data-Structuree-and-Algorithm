@@ -85,6 +85,46 @@ public class LinkedList {
     public int recursiveSearch(int key){
         return helper(head, key);
     }
+
+    public void deleteNthFromEnd(int n){
+        //calculate size
+        int sz = 0;
+        Node temp = head;
+        while(temp != null){
+            temp = temp.next;
+            sz++;
+        }
+
+        //if n == head
+        if(n == sz){
+            head = head.next;
+            return;
+        }
+
+        int i = 1;
+        int iToFind = sz-n;
+        Node prev = head;
+        while(i < iToFind){
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+
+    }
+
+    //slow fast approach
+    public Node findMid(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+
+        }
+        return slow; //slow is my midNode
+    }
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
@@ -99,11 +139,16 @@ public class LinkedList {
         ll.print();
         ll.addlast(4);
         ll.print();
+        ll.addlast(5);
+        ll.print();
 
-        System.out.println(ll.searchNode(3));
-        System.out.println(ll.searchNode(10));
+        //System.out.println(ll.searchNode(3));
+        //System.out.println(ll.searchNode(10));
 
-        System.out.println(ll.recursiveSearch(4));
-        System.out.println(ll.recursiveSearch(99));
+        //System.out.println(ll.recursiveSearch(4));
+        //System.out.println(ll.recursiveSearch(99));
+
+        ll.deleteNthFromEnd(3);
+        ll.print();
     }
 }
