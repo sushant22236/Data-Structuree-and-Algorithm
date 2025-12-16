@@ -141,7 +141,7 @@ public class LinkedList {
     }
 
     public boolean checkPalindrome(){
-        if(head == null || head.next != null){
+        if(head == null || head.next == null){
             return true;
         }
         //step .1 find mid of linkedlist
@@ -177,19 +177,19 @@ public class LinkedList {
         // ll.head = new Node(1);
         // ll.head.next = new Node(2);
         // ll.head.next = new Node(3);
-        ll.print();
-        ll.addFirst(2);
-        ll.print();
-        ll.addFirst(1);
-        ll.print();
-        ll.addlast(3);
-        ll.print();
-        ll.addlast(4);
-        ll.print();
-        ll.addlast(5);
-        ll.print();
-        ll.reverseLinkedList();
-        ll.print();
+        // ll.print();
+        // ll.addFirst(2);
+        // ll.print();
+        // ll.addFirst(1);
+        // ll.print();
+        // ll.addlast(3);
+        // ll.print();
+        // ll.addlast(4);
+        // ll.print();
+        // ll.addlast(5);
+        // ll.print();
+        // ll.reverseLinkedList();
+        // ll.print();
 
         //System.out.println(ll.searchNode(3));
         //System.out.println(ll.searchNode(10));
@@ -199,5 +199,12 @@ public class LinkedList {
 
         ///ll.deleteNthFromEnd(3);
         //ll.print();
+
+        ll.addlast(1);
+        ll.addlast(2);
+        ll.addlast(1);
+        //ll.addlast(1);
+
+        System.out.println(ll.checkPalindrome());
     }
 }
