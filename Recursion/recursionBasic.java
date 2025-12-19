@@ -94,7 +94,21 @@ public class recursionBasic {
         int xn = x * xmn1;
         return xn;
     }
+
+    public static int optimizedPower(int x, int n){
+
+        if(n == 0){
+            return 1;
+        }
+        int halfPowSquare = optimizedPower(x, n/2) * optimizedPower(x, n/2);
+
+        if(n % 2 != 0){
+            halfPowSquare = x * halfPowSquare;
+        }
+
+        return halfPowSquare;
+    }
     public static void main(String args[]){
-        System.out.println(power(2, 10));
+        System.out.println(optimizedPower(2, 10));
     }
 }
