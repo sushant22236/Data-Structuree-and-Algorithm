@@ -48,8 +48,53 @@ public class recursionBasic {
         int fn = fnm1 + fnm2;
         return fn;
     }
+
+    public static boolean isSorted(int arr[], int i){
+        if(i == arr.length-1){
+            return true;
+        }
+        if(arr[i] > arr[i+1]){
+            return false;
+        }
+
+        return isSorted(arr, i+1);
+    }
+
+    public static int firstOccurence(int arr[], int i){
+        int key = 5;        
+        if(i == arr.length-1){
+            return -1;
+        }
+
+        if(arr[i] == key){
+            return i;
+        }
+
+        return firstOccurence(arr, i+1);
+
+
+    }
+
+    // public static int lastOccurence(int arr[], int i){
+    //     int key = 5;
+    //     if(i == arr.length-1){
+    //         return -1;
+    //     }
+
+    //     return lastOccurence(arr, i+1);
+  
+    // }
+
+    public static int power(int x , int n){
+        if(n == 0){
+            return 1;
+        }
+
+        int xmn1 = power(x, n-1);
+        int xn = x * xmn1;
+        return xn;
+    }
     public static void main(String args[]){
-        int n = 5;
-        System.out.println(fibonnaci(n));
+        System.out.println(power(2, 10));
     }
 }
