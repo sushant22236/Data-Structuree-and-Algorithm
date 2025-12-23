@@ -103,7 +103,8 @@ public class recursionBasic {
         if(n == 0){
             return 1;
         }
-        int halfPowSquare = optimizedPower(x, n/2) * optimizedPower(x, n/2);
+        int halfPow = optimizedPower(x, n/2);
+        int halfPowSquare = halfPow * halfPow;
 
         if(n % 2 != 0){
             halfPowSquare = x * halfPowSquare;
@@ -112,6 +113,6 @@ public class recursionBasic {
         return halfPowSquare;
     }
     public static void main(String args[]){
-        System.out.println(printDec(10));
+        System.out.println(optimizedPower(2, 5));;
     }
 }
