@@ -3,13 +3,16 @@ package Recursion;
 
 public class recursionBasic {
 
-    public static void printDec(int n){
+    public static int printDec(int n){
         if( n == 1){
-            System.out.println(n);
-            return;
+            // System.out.println(n);
+            return n;
         }
         System.out.print(n+" ");
-        printDec(n-1);
+        int fn = printDec(n-1);
+        return fn;
+        // System.out.print(n+" ");
+        // printDec(n-1);
     }
 
     public static void printInc(int n){
@@ -109,6 +112,6 @@ public class recursionBasic {
         return halfPowSquare;
     }
     public static void main(String args[]){
-        System.out.println(optimizedPower(2, 10));
+        System.out.println(printDec(10));
     }
 }
