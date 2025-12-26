@@ -9,6 +9,7 @@ public class reverseStringInStack {
         int idx = 0;
         while(idx < str.length()){
             s.push(str.charAt(idx));
+            idx++;
         }
 
         StringBuilder result = new StringBuilder();
