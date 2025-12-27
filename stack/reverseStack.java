@@ -18,6 +18,7 @@ public class reverseStack {
         if(s.isEmpty()){
             return;
         }
+        
         int top = s.pop();
         reverseStack1(s);
         pushAtBottom(s, top);
@@ -37,6 +38,5 @@ public class reverseStack {
 
         reverseStack1(s);
         printStack(s);
-
     }
 }
