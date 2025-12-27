@@ -31,6 +31,8 @@ public class stackSpanProblem {
         int span[] = new int[stock.length];
         stockspan(stock, span);
 
-        for(int i = 0; i < )
+        for(int i = 0; i < span.length; i++){
+            System.out.print(span[i] + " ");
+        }
     }
 }
