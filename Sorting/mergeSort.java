@@ -2,12 +2,12 @@ package Sorting;
 
 public class mergeSort {
     public static void conquer(int arr[], int si, int mid, int ei){
-        int[] merged = new int[arr.length];
+        int[] merged = new int[ei - si + 1];
         int idx1 = si;
         int idx2 = mid+1;
         int x = 0;
 
-        while(arr[idx1] <= mid && arr[idx2] <= ei){
+        while(idx1 <= mid && idx2 <= ei){
             if(arr[idx1] <= arr[idx2]){
                 merged[x] = arr[idx1];
                 x++; idx1++;
@@ -17,12 +17,12 @@ public class mergeSort {
             }
         }
 
-        while(arr[idx1] <= mid){
+        while(idx1 <= mid){
             merged[x] = arr[idx1];
             x++; idx1++;
         }
 
-        while(arr[idx2] <= ei){
+        while(idx2 <= ei){
             merged[x] = arr[idx2];
             x++; idx2++;
         }
@@ -35,7 +35,7 @@ public class mergeSort {
         if(si >= ei){
             return;
         }
-        int mid = si+ei/2;
+        int mid = (si+ei)/2;
         divide(arr, si, mid);
         divide(arr, mid+1, ei);
         conquer(arr, si, mid, ei);
