@@ -65,7 +65,6 @@ public class oops1 {
 }
 
 // Constructor with copy constructor
-
 //isme constructor overloading bhi hai
 
 class Teacher{
