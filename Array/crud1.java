@@ -43,6 +43,24 @@ public class crud1 {
         arr[index] = newValue;
     }
 
+    public static void searchElement(int arr[], int value) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == value) {
+                System.out.println("Element found at index: " + i);
+                return;
+            }
+        }
+        System.out.println("Element not found");
+    }
+
+    public static void readElement(int arr[], int index){
+        if(index >= 0 && index < arr.length){
+            System.out.println("Element at index "+ index + " is "+ arr[index]);
+        } else {
+            System.out.println("Invalid index");
+        }
+    }
+
     public static void printArray(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -52,13 +70,8 @@ public class crud1 {
     public static void main(String[] args) {
         int arr[] = insertArray();
 
-        printArray(arr);
-        arr = deleteElement(arr, 2);
-        System.out.println("\nAfter deletion:");
-        printArray(arr);
-        updateElement(arr, 1, 99);
-        System.out.println("\nAfter update:");
-        printArray(arr);
+        //searchElement(arr, 2);
+        readElement(arr, 3);
 
     }
 }
