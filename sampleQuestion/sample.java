@@ -8,14 +8,26 @@ public class sample {
         // sum s = new sum();
         // System.out.println(s.sumOfDigit());
 
-        reverse r = new reverse();
-        System.out.println(r.reverseOfDigit());
+        // reverse r = new reverse();
+        // System.out.println(r.reverseOfDigit());
 
-        palindrome p = new palindrome();
-        System.out.println(p.palindrome());
+        // palindrome p = new palindrome();
+        // System.out.println(p.palindrome());
 
-        prime pm = new prime();
-        System.out.println(pm.checkPrime());
+        // prime pm = new prime();
+        // System.out.println(pm.checkPrime());
+
+        // factorial f = new factorial();
+        // System.out.println(f.factorial());
+
+        // countNumberOfEvenDigit cn = new countNumberOfEvenDigit();
+        // System.out.println(cn.countEvenDigit());
+
+        // perfectNumber pn = new perfectNumber();
+        // pn.perfectNumber();
+
+        power p = new power();
+        System.out.println(p.power(2, 5, 1));
     }
 }
 
@@ -115,7 +127,7 @@ class prime {
         } else {
             System.out.println("Not Prime");
         }
-
+        return prime;
     }
 }
 
@@ -125,8 +137,65 @@ class factorial {
         int n = sc.nextInt();
         int fact = 1;
 
-        for (int i = 0; i < n; i++) {
-
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
         }
+        System.out.println("factorial = " + fact);
+        return fact;
+    }
+}
+
+class countNumberOfEvenDigit {
+    public int countEvenDigit() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int count = 0;
+
+        if (n < 0) {
+            return -1;
+        }
+        if (n == 0) {
+            return 0;
+        }
+
+        while (n > 0) {
+            int digit = n % 10;
+            if (digit % 2 == 0) {
+                count++;
+            }
+            n = n / 10;
+        }
+        return count;
+    }
+
+}
+
+class perfectNumber {
+
+    public void perfectNumber() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                sum = sum + i;
+            }
+        }
+
+        if (sum == n) {
+            System.out.println("Perfect Number");
+        } else {
+            System.out.println("Not a Perfect Number");
+        }
+    }
+}
+
+class power {
+    public int power(int a, int b, int pow) {
+        for (int i = 1; i <= b; i++) {
+            pow = pow * a;
+        }
+        return pow;
     }
 }
