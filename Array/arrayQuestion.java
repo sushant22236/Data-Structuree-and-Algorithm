@@ -128,10 +128,10 @@ class arrintersection {
 
 class findUnsortedElement {
     public int[] findUnsortedElement1(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= arr[i + 1]) {
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
                 System.out.println("sorted Array");
-
+                return arr;
             }
         }
         System.out.println("Unsorted Array");
