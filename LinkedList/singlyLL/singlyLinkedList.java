@@ -105,12 +105,12 @@ public class singlyLinkedList {
     }
 
     public void deleteHead() {
-        if (head == null || head.next == null) {
+        if (head == null) {
             System.out.println("Linked list is empty");
             return;
         }
 
-        head.next = head;
+        head = head.next;
     }
 
     public void deleteTail() {
@@ -118,6 +118,7 @@ public class singlyLinkedList {
             System.out.println("tail not exists");
             return;
         }
+
     }
 
     public void deleteAtPosition(int position) {
@@ -125,11 +126,47 @@ public class singlyLinkedList {
             System.out.println("Invalid position");
             return;
         }
-        Node prevNode = head;
-        for (int i = 1; i <= position - 2; i++) {
-            prevNode = prevNode.next;
+        Node temp = head;
+        for (int i = 1; i < position - 1; i++) {
+            temp = temp.next;
         }
+        temp.next = temp.next.next;
+        size--;
 
+    }
+
+    public boolean serchElement(int target) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == target) {
+                return true;
+            }
+            temp = temp.next;
+
+        }
+        return false;
+    }
+
+    public int findPosition(int target) {
+        Node temp = head;
+        int position = 1;
+        while (temp != null) {
+            if (temp.data == target) {
+                return position;
+            }
+            temp = temp.next;
+            position++;
+        }
+        return -1;
+    }
+
+    public void updateAtPosition(int position, int newData) {
+        Node temp = head;
+
+        for (int i = 1; i < position; i++) {
+            temp = temp.next;
+        }
+        temp.data = newData;
     }
 
     public static void main(String args[]) {
@@ -165,6 +202,13 @@ public class singlyLinkedList {
         System.out.println(myList.isEmpty());
         myList.getHead();
         myList.getTail();
-
+        System.out.println(myList.serchElement(500));
+        System.out.println(myList.findPosition(105));
+        myList.updateAtPosition(3, 15);
+        myList.printLinkedList();
+        myList.deleteAtPosition(3);
+        myList.printLinkedList();
+        myList.deleteHead();
+        myList.printLinkedList();
     }
 }
